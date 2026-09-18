@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Dad 🦅❤️</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#03070d;
+  color:white;
+  font-family:Georgia,serif;
+  overflow-x:hidden;
+}
+
+/* LOADING SCREEN */
+
+#loader{
+  position:fixed;
+  inset:0;
+  background:#03070d;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  z-index:9999;
+  transition:1s;
+}
+
+.loader-eagle{
+  font-size:80px;
+  animation:float 2s infinite;
+}
+
+#loader p{
+  margin-top:20px;
+  color:#d9aa45;
+  letter-spacing:3px;
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:30px 20px;
+  position:relative;
+  overflow:hidden;
+
+  background:
+  radial-gradient(circle at center,#173d5c 0%,#081522 45%,#020408 100%);
+}
+
+.stars{
+  position:absolute;
+  inset:0;
+  background-image:
+  radial-gradient(white 1px,transparent 1px),
+  radial-gradient(white 1px,transparent 1px);
+  background-size:90px 90px,140px 140px;
+  opacity:.3;
+}
+
+.hero-content{
+  position:relative;
+  z-index:3;
+  max-width:900px;
+}
+
+.big-eagle{
+  font-size:110px;
+  animation:float 3s ease-in-out infinite;
+  filter:drop-shadow(0 0 30px #d9aa45);
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-20px);}
+}
+
+.tag{
+  color:#d9aa45;
+  letter-spacing:6px;
+  text-transform:uppercase;
+  font-size:13px;
+  margin-top:15px;
+}
+
+h1{
+  font-size:clamp(45px,10vw,95px);
+  margin:20px 0;
+
+  background:linear-gradient(
+    90deg,
+    #fff,
+    #e9bd5b,
+    #fff
+  );
+
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero-sub{
+  font-size:clamp(20px,4vw,30px);
+  line-height:1.6;
+  color:#e7edf4;
+}
+
+.enter{
+  display:inline-block;
+  margin-top:40px;
+  padding:16px 32px;
+  border:1px solid #d9aa45;
+  border-radius:50px;
+  color:#e8bd5d;
+  text-decoration:none;
+  transition:.4s;
+}
+
+.enter:hover{
+  background:#d9aa45;
+  color:#05080c;
+  box-shadow:0 0 35px #d9aa45;
+}
+
+/* SECTIONS */
+
+section{
+  padding:100px 20px;
+  text-align:center;
+}
+
+.title{
+  color:#dfb34f;
+  font-size:clamp(30px,6vw,48px);
+  margin-bottom:30px;
+}
+
+.text{
+  max-width:820px;
+  margin:auto;
+  font-size:20px;
+  line-height:2;
+  color:#d4dee8;
+}
+
+.gold{
+  color:#efc65e;
+  font-weight:bold;
+}
+
+/* HEART MESSAGE */
+
+.heart-section{
+  background:
+  linear-gradient(
+    180deg,
+    #03070d,
+    #0b1c2b,
+    #03070d
+  );
+}
+
+.heart-box{
+  max-width:850px;
+  margin:auto;
+  padding:50px 25px;
+
+  border-top:1px solid #d9aa45;
+  border-bottom:1px solid #d9aa45;
+}
+
+.heart{
+  font-size:65px;
+  animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+  50%{transform:scale(1.15);}
+}
+
+/* IGBO PROVERB */
+
+.proverb{
+  background:#02050a;
+  position:relative;
+}
+
+.proverb-box{
+  max-width:850px;
+  margin:auto;
+  padding:55px 25px;
+
+  border:1px solid rgba(217,170,69,.4);
+  border-radius:25px;
+
+  background:rgba(255,255,255,.035);
+
+  box-shadow:0 0 50px rgba(217,170,69,.08);
+}
+
+.proverb-igbo{
+  font-size:clamp(25px,5vw,42px);
+  color:#efc45c;
+  line-height:1.5;
+  font-style:italic;
+}
+
+.translation{
+  margin-top:25px;
+  font-size:19px;
+  color:#cbd5df;
+  line-height:1.7;
+}
+
+.proverb-mark{
+  font-size:55px;
+  margin-bottom:20px;
+}
+
+/* VALUES */
+
+.values{
+  max-width:1050px;
+  margin:50px auto 0;
+
+  display:grid;
+  grid-template-columns:
+  repeat(auto-fit,minmax(220px,1fr));
+
+  gap:25px;
+}
+
+.card{
+  padding:35px 22px;
+
+  border-radius:22px;
+
+  background:rgba(255,255,255,.04);
+
+  border:1px solid rgba(217,170,69,.25);
+
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-12px);
+  border-color:#e1b64f;
+  box-shadow:0 20px 50px rgba(217,170,69,.12);
+}
+
+.card-icon{
+  font-size:50px;
+  margin-bottom:15px;
+}
+
+.card h3{
+  color:#edc35b;
+  margin-bottom:15px;
+  font-size:23px;
+}
+
+.card p{
+  color:#c8d2dc;
+  line-height:1.7;
+}
+
+/* EAGLE */
+
+.eagle-section{
+  min-height:75vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+  radial-gradient(
+    circle,
+    #163a55,
+    #07111c 50%,
+    #02050a
+  );
+}
+
+.eagle-message{
+  max-width:850px;
+}
+
+.flying-eagle{
+  font-size:120px;
+  animation:float 3s infinite;
+}
+
+.eagle-message h2{
+  font-size:clamp(35px,7vw,65px);
+  color:#e7bc52;
+  margin:25px 0;
+}
+
+.eagle-message p{
+  font-size:22px;
+  line-height:1.8;
+  color:#dce4eb;
+}
+
+/* MEMORY */
+
+.memory{
+  background:#050a11;
+}
+
+.memory-line{
+  max-width:750px;
+  margin:20px auto;
+  padding:20px;
+  border-left:3px solid #d9aa45;
+  text-align:left;
+  color:#d2dbe4;
+  font-size:19px;
+  line-height:1.7;
+}
+
+/* SURPRISE */
+
+.surprise{
+  min-height:80vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  background:
+  radial-gradient(circle,#122b40,#02050a 65%);
+}
+
+button{
+  margin-top:35px;
+  padding:18px 35px;
+
+  border:none;
+  border-radius:50px;
+
+  background:linear-gradient(
+    45deg,
+    #bd8525,
+    #f2cf6a
+  );
+
+  color:#080b0e;
+  font-size:18px;
+  font-weight:bold;
+
+  cursor:pointer;
+
+  box-shadow:0 0 30px rgba(217,170,69,.35);
+
+  transition:.3s;
+}
+
+button:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 50px rgba(217,170,69,.7);
+}
+
+#secret{
+  display:none;
+  max-width:800px;
+  margin-top:40px;
+
+  font-size:23px;
+  line-height:2;
+
+  color:#e5ebf0;
+
+  animation:appear 1.5s ease;
+}
+
+@keyframes appear{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* FOOTER */
+
+footer{
+  padding:60px 20px;
+  text-align:center;
+  background:#010204;
+  color:#8995a2;
+}
+
+footer .eagle-footer{
+  font-size:55px;
+  margin-bottom:15px;
+}
+
+footer strong{
+  color:#e2b54c;
+}
+
+/* FLOATING PARTICLES */
+
+.particle{
+  position:fixed;
+  bottom:-30px;
+  pointer-events:none;
+  z-index:100;
+
+  animation:rise 6s linear forwards;
+}
+
+@keyframes rise{
+  to{
+    transform:
+    translateY(-110vh)
+    rotate(360deg);
+
+    opacity:0;
+  }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<!-- LOADING -->
+
+<div id="loader">
+  <div class="loader-eagle">🦅</div>
+  <p>FOR MY HERO...</p>
+</div>
+
+
+<!-- HERO -->
+
+<div class="hero">
+
+  <div class="stars"></div>
+
+  <div class="hero-content">
+
+    <div class="big-eagle">🦅</div>
+
+    <div class="tag">
+      A birthday tribute
+    </div>
+
+    <h1>Happy Birthday, Dad</h1>
+
+    <p class="hero-sub">
+      To the man who means more to me
+      than words could ever explain. ❤️
+    </p>
+
+    <a href="#letter" class="enter">
+      Enter Your Tribute ↓
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- LETTER -->
+
+<section id="letter" class="heart-section">
+
+  <div class="heart-box">
+
+    <div class="heart">❤️</div>
+
+    <h2 class="title">
+      Dear Dad...
+    </h2>
+
+    <p class="text">
+
+      There are many things in this world that I could
+      live without, but having you as my dad is something
+      I could never imagine giving up.
+
+      <br><br>
+
+      You are more than just my father.
+
+      <br>
+
+      You are my <span class="gold">teacher</span>,
+      my <span class="gold">protector</span>,
+      my <span class="gold">example</span>,
+      and one of the greatest blessings God has given me.
+
+      <br><br>
+
+      Sometimes I may not say it enough.
+      Sometimes I may not know how to express it.
+
+      But Dad...
+
+      <br><br>
+
+      <span class="gold">
+      I appreciate you. I respect you.
+      I admire you. And I love you.
+      </span>
+
+      <br><br>
+
+      Happy Birthday to the man who will always
+      have a special place in my heart.
+
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- IGBO PROVERB -->
+
+<section class="proverb">
+
+  <h2 class="title">
+    A Proverb For My Father 🦅
+  </h2>
+
+  <div class="proverb-box">
+
+    <div class="proverb-mark">🪶</div>
+
+    <p class="proverb-igbo">
+      "Nwata kwo aka, osoro okenye rie nri."
+    </p>
+
+    <p class="translation">
+      "When a child washes his hands well,
+      he eats with elders."
+    </p>
+
+    <br>
+
+    <p class="text">
+
+      Dad, this proverb reminds me of the wisdom
+      I have learned from you.
+
+      <br><br>
+
+      You have shown me that character,
+      respect, hard work and wisdom open doors.
+
+      <br><br>
+
+      One day, I hope the lessons you have taught me
+      will be reflected in the person I become.
+
+      <br><br>
+
+      <span class="gold">
+      Your wisdom is part of my inheritance.
+      </span>
+
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- WHAT DAD MEANS -->
+
+<section>
+
+  <h2 class="title">
+    What You Mean To Me
+  </h2>
+
+  <div class="values">
+
+    <div class="card">
+
+      <div class="card-icon">🛡️</div>
+
+      <h3>My Protector</h3>
+
+      <p>
+        Thank you for always looking out for me
+        and being someone I can depend on.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="card-icon">🧭</div>
+
+      <h3>My Teacher</h3>
+
+      <p>
+        Your words, advice and example have taught
+        me lessons that school cannot teach.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="card-icon">🏆</div>
+
+      <h3>My Inspiration</h3>
+
+      <p>
+        You remind me that success comes through
+        patience, courage and perseverance.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <div class="card-icon">❤️</div>
+
+      <h3>My Everything</h3>
+
+      <p>
+        Above all, you are my dad.
+        And that will always be one of my greatest blessings.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- EAGLE -->
+
+<section class="eagle-section">
+
+  <div class="eagle-message">
+
+    <div class="flying-eagle">🦅</div>
+
+    <h2>Keep Soaring, Dad.</h2>
+
+    <p>
+
+      Eagles don't spend their lives looking at how
+      high they have already flown.
+
+      <br><br>
+
+      They keep looking toward the sky.
+
+      <br><br>
+
+      And Dad, that is how I see you.
+
+      <br><br>
+
+      A man who keeps moving forward.
+      A man whose strength has inspired me.
+      A man whose legacy I hope to carry forward.
+
+      <br><br>
+
+      <strong style="color:#edc35b;">
+      May you keep soaring higher.
+      🦅
+      </strong>
+
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- MEMORIES -->
+
+<section class="memory">
+
+  <h2 class="title">
+    The Things I'll Always Remember
+  </h2>
+
+  <div class="memory-line">
+    Your advice when I didn't know what to do.
+  </div>
+
+  <div class="memory-line">
+    Your encouragement when things became difficult.
+  </div>
+
+  <div class="memory-line">
+    The moments when you made me laugh.
+  </div>
+
+  <div class="memory-line">
+    The sacrifices you made that I may not always have noticed.
+  </div>
+
+  <div class="memory-line">
+    And most importantly... simply having you as my dad.
+  </div>
+
+</section>
+
+
+<!-- FINAL SURPRISE -->
+
+<section class="surprise">
+
+  <h2 class="title">
+    Dad... I Saved One Last Message ❤️
+  </h2>
+
+  <p class="text">
+    Don't leave yet.
+    There is something I really want you to read.
+  </p>
+
+  <button onclick="reveal()">
+    🦅 Open My Heart
+  </button>
+
+  <div id="secret">
+
+    Dad,
+
+    <br><br>
+
+    If I had the chance to choose my father again,
+    I would still choose you.
+
+    <br><br>
+
+    Not because you're perfect,
+    but because you are <strong style="color:#e9bd59;">
+    my dad
+    </strong>.
+
+    <br><br>
+
+    Thank you for every sacrifice,
+    every lesson, every correction,
+    every laugh,
+    every prayer,
+    and every moment you have given me.
+
+    <br><br>
+
+    I may grow older.
+    I may travel.
+    I may build a life of my own.
+
+    <br><br>
+
+    But one thing will never change:
+
+    <br><br>
+
+    <strong style="color:#e9bd59;font-size:30px;">
+    YOU WILL ALWAYS BE MY DAD.
+    </strong>
+
+    <br><br>
+
+    I love you more than this little website
+    could ever explain.
+
+    <br><br>
+
+    Happy Birthday, Dad.
+
+    <br><br>
+
+    🦅❤️🎂
+
+    <br><br>
+
+    <span style="color:#e9bd59;">
+      Keep soaring, my hero.
+    </span>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="eagle-footer">🦅</div>
+
+  Made with love for
+
+  <br><br>
+
+  <strong>THE GREATEST DAD ❤️</strong>
+
+  <br><br>
+
+  Happy Birthday, Dad 🎂
+
+</footer>
+
+
+<script>
+
+/* LOADING SCREEN */
+
+window.addEventListener("load",function(){
+
+  setTimeout(function(){
+
+    document.getElementById("loader").style.opacity="0";
+
+    setTimeout(function(){
+      document.getElementById("loader").style.display="none";
+    },1000);
+
+  },1800);
+
+});
+
+
+/* SURPRISE */
+
+function reveal(){
+
+  document.getElementById("secret").style.display="block";
+
+  createParticles();
+
+}
+
+
+/* FLOATING EAGLES + HEARTS */
+
+function createParticles(){
+
+  for(let i=0;i<35;i++){
+
+    let p=document.createElement("div");
+
+    p.className="particle";
+
+    p.innerHTML =
+      Math.random() > .5 ? "❤️" : "🦅";
+
+    p.style.left =
+      Math.random()*100+"vw";
+
+    p.style.fontSize =
+      (15+Math.random()*25)+"px";
+
+    p.style.animationDuration =
+      (3+Math.random()*4)+"s";
+
+    document.body.appendChild(p);
+
+    setTimeout(()=>{
+      p.remove();
+    },7000);
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
+<div></div>
